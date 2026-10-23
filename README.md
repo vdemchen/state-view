@@ -153,3 +153,7 @@ StateView/
 
 - `StateView`, `StateViewModel` and `StateViewFail` are `@MainActor`.
 - Loaded content is always an array (`[Content]`), so the library is aimed at list-style screens. Use `.emptyData` for an empty result rather than `.loaded([])`.
+
+## License
+
+StateView is available under the MIT License. See [LICENSE](LICENSE) for details.
