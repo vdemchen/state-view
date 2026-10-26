@@ -9,22 +9,34 @@ A small SwiftUI library for building screens driven by a single view state. Your
 
 ## Installation
 
-Add the package with Swift Package Manager.
+### Swift Package Manager
 
-In Xcode: **File → Add Package Dependencies…** and enter the repository URL.
+In Xcode: **File → Add Package Dependencies…** and enter the repository URL:
 
-Or in `Package.swift`:
+```
+https://github.com/vdemchen/state-view.git
+```
+
+Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "<repository-url>", branch: "main")
+    .package(url: "https://github.com/vdemchen/state-view.git", from: "1.0.0")
 ],
 targets: [
     .target(
         name: "YourTarget",
-        dependencies: ["StateView"]
+        dependencies: [
+            .product(name: "StateView", package: "state-view")
+        ]
     )
 ]
+```
+
+Then import the module:
+
+```swift
+import StateView
 ```
 
 ## Core concepts
@@ -153,6 +165,10 @@ StateView/
 
 - `StateView`, `StateViewModel` and `StateViewFail` are `@MainActor`.
 - Loaded content is always an array (`[Content]`), so the library is aimed at list-style screens. Use `.emptyData` for an empty result rather than `.loaded([])`.
+
+## Author
+
+**Vladyslav Demchenko** · [@vdemchen](https://github.com/vdemchen)
 
 ## License
 
